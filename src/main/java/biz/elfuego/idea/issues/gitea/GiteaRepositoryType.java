@@ -31,7 +31,7 @@ public class GiteaRepositoryType extends BaseRepositoryType<GiteaRepository> {
     }
 
     @NotNull
-    @Override
+    //@Override
     public TaskRepositoryEditor createEditor(GiteaRepository repository, Project project, Consumer<GiteaRepository> consumer) {
         return new GiteaRepositoryEditor(repository, project, consumer);
     }

@@ -1,30 +1,31 @@
-<!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
+<!--
+  ~ Copyright © 2020 by elfuego.biz
+  -->
+
 <idea-plugin>
-  <!-- Unique identifier of the plugin. It should be FQN. It cannot be changed between the plugin versions. -->
-  <id>biz.elfuego.idea.issues.gitea.intellij-gitea-plugin</id>
+  <id>biz.elfuego.idea.issues.gitea</id>
+  <name>Gitea issues</name>
+  <version>1.6</version>
+  <vendor email="support@elfuego.biz" url="http://elfuego.biz">elfuego.biz</vendor>
 
-  <!-- Public plugin name should be written in Title Case.
-       Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-name -->
-  <name>Intellij-gitea-plugin</name>
-
-  <!-- A displayed Vendor name or Organization ID displayed on the Plugins Page. -->
-  <vendor email="support@yourcompany.com" url="https://www.yourcompany.com">YourCompany</vendor>
-
-  <!-- Description of the plugin displayed on the Plugin Page and IDE Plugin Manager.
-       Simple HTML elements (text formatting, paragraphs, and lists) can be added inside of <![CDATA[ ]]> tag.
-       Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-description -->
   <description><![CDATA[
-    Enter short description for your plugin here.<br>
-    <em>most HTML tags may be used</em>
-  ]]></description>
+      Gitea issue tracker integration plugin (http://gitea.io)
+    ]]></description>
 
-  <!-- Product and plugin compatibility requirements.
-       Read more: https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
+  <change-notes><![CDATA[
+      Fixes errors with loading issues without limits (contributed by billlhead).<br>
+      Fixes searching for issues containing white spaces (contributed by billlhead).<br>
+    ]]>
+  </change-notes>
+
+  <idea-version since-build="173.0"/>
+
+  <depends>com.intellij.modules.lang</depends>
+  <depends>com.intellij.modules.all</depends>
   <depends>com.intellij.modules.platform</depends>
+  <depends>com.intellij.tasks</depends>
 
-  <!-- Extension points defined by the plugin.
-       Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
   <extensions defaultExtensionNs="com.intellij">
-
+    <tasks.repositoryType implementation="biz.elfuego.idea.issues.gitea.GiteaRepositoryType"/>
   </extensions>
 </idea-plugin>
