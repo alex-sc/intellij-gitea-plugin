@@ -82,7 +82,7 @@ public class Utils {
             JsonObject obj = el.getAsJsonObject();
             if (obj.has(OK) && obj.get(OK).isJsonPrimitive() && obj.get(OK).getAsBoolean()) {
                 if (obj.has(DATA) && obj.get(DATA).isJsonArray())
-                return obj.get(DATA).getAsJsonArray();
+                    return obj.get(DATA).getAsJsonArray();
             }
         }
         throw new Exception(Consts.ERROR + ", getOkData: " + el.toString());

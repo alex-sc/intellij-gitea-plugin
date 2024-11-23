@@ -29,7 +29,7 @@ public class GiteaRepositoryEditor extends BaseRepositoryEditor<GiteaRepository>
     private JBLabel assignedLabel;
     private JCheckBox assignedCheckBox;
 
-    GiteaRepositoryEditor(GiteaRepository repository, Project project, Consumer<GiteaRepository> consumer) {
+    GiteaRepositoryEditor(GiteaRepository repository, Project project, Consumer<?super GiteaRepository> consumer) {
         super(project, repository, consumer);
 
         repoName.setText(repository.getRepoName());

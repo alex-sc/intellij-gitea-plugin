@@ -29,7 +29,7 @@ public class Consts {
     }
 
     public interface Url {
-        String DEFAULT = "https://try.gitea.io";
+        String DEFAULT = "https://demo.gitea.com";
     }
 
     public interface EndPoint {

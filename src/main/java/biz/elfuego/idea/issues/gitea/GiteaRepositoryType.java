@@ -27,12 +27,12 @@ public class GiteaRepositoryType extends BaseRepositoryType<GiteaRepository> {
     @NotNull
     @Override
     public Icon getIcon() {
-        return IconLoader.getIcon("/resources/gitea.png");
+        return IconLoader.getIcon("pluginIcon.png");
     }
 
     @NotNull
-    //@Override
-    public TaskRepositoryEditor createEditor(GiteaRepository repository, Project project, Consumer<GiteaRepository> consumer) {
+    @Override
+    public TaskRepositoryEditor createEditor(GiteaRepository repository, Project project, Consumer<?super GiteaRepository> consumer) {
         return new GiteaRepositoryEditor(repository, project, consumer);
     }
 
